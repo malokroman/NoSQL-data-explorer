@@ -63,9 +63,11 @@ These functions are:
 - find_paths
 - find_paths_unique
 - find_paths_unique_per_doc
+
 The above are useful for understanding the schema of the nested data and data discipline. When combined with Counter, you can quickly understand what paths are the most important in the data set. Other use cases include finding the most common fields that we are not sure the exact path is for like "name", "id". More examples are in the docstring for each function.
 
 - find_values
+
 This is useful when you know of a value or an aspect of value but are not sure what the paths are. For example, if you are trying to join two data sets with a known key, you could use the key to find the path to the data you need. Or if you want to make sure you have the best path for something, you can use this function to list all the paths that share these values and then evaluate them. More examples are in the docstring for the function.
 
 
