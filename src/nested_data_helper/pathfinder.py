@@ -1,4 +1,4 @@
-from typing import Callable, Iterable
+from typing import Any, Callable, Iterable
 
 from .navigation import navigate
 
@@ -230,15 +230,15 @@ def find_paths_unique_per_doc(
         )
 
 
-def find_value[T](
+def find_value(
     list_or_dict: list | dict,
-    value_finder: Callable[[T], bool],
+    value_finder: Callable[[Any], bool],
     *,
     start_from: str = "",
     ignore_finder_error: bool = True,
     ignore_unknown_iterable: bool = False,
     _prefix: str = "",
-) -> Iterable[tuple[str, T]]:
+) -> Iterable[tuple[str, Any]]:
     r"""Yield all paths and value where value_finder(value) returns a True value.
     Any error is treated as False if ignore_finder_error is set to True.
 
