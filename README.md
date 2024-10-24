@@ -8,8 +8,8 @@ I am a data engineer who works with data a lot. Whilst flat data might be straig
 To efficiently understand and navigate nested data, I have been using the functions in this modules and decided to polish them and publish them for anyone to use. I have used them to understand the schema discipline, find the path to desired data, understand if there are missing data and etc. They may not be helpful in production but they surely are useful being used in REPL or Jupyter notebook. Use cases can be scraping, feature engineering, data mining, data cleansing, edge case finding and on and on. By using these function, you can speed up your data inspection iterations.
 
 This library consist of two parts:
-- navigate: syntactic sugar to help you navigate to the subpath of the complex data with the path syntax
-- explore: help you find the relevant paths you are looking for from paths or from the values
+- navigation: syntactic sugar to help you navigate to the subpath of the complex data with the path syntax
+- pathfinder: help you find the relevant paths you are looking for from paths or from the values
 
 They share the same path structure so you can easily copy the path and see the data for yourself.
 
