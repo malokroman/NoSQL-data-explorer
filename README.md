@@ -18,7 +18,18 @@ This library might not be useful in production as [key] chains work just fine an
 
 ### Why nested-data-helper
 
-This library is lightweight and get the job done! We use core python so installation is a breeze and we can be sure that this will work for years to come even when it seems abandoned.
+Nested-data-helper speeds up the process of inspecting nested data such as JSON files, API returned values, or NoSQL Databases, enabling you to achieve quality work with less time. You may also use this tool to inspect the schema discipline of data!
+
+It is lightweight and get the job done! We use core python so installation is a breeze and we can be sure that this will work for years to come even when it seems abandoned.
+
+
+### Installation
+
+You can install the library from PyPi using pip:
+
+``` sh
+pip install nested_data_helper
+```
 
 ### Navigation
 
