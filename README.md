@@ -31,7 +31,11 @@ You can install the library from PyPi using pip:
 pip install nested_data_helper
 ```
 
-### Navigation
+### Examples
+
+For example using real data, see [Workflow for Nested Data](https://medium.com/@romanma0508/workflow-for-nested-data-a503a9e505e9).
+
+#### Navigation
 
 You can get the values of the data without the clumsy chain of square brackets now.
 ``` python
@@ -66,7 +70,7 @@ navigate(data, "results.[0].synonyms.[].text")
 This is even more powerful combined with the paths returned from explore and will allow quick exploration of your data.
 
 
-### Pathfinder
+#### Pathfinder
 
 This helps you understand the data structure you are looking for by filtering out the noise. Combined with Counter, you can find the most common paths in the data, or simply understand if there are missing data. You can also find out the type discipline of the data through the explore functions.
 
