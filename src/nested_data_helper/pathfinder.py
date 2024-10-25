@@ -295,7 +295,7 @@ def find_value(
     for k, v in iterable:
         path = f"{_prefix}{k}"
         try:
-            if value_finder(v):
+            if len(path) > len(start_from) and value_finder(v):
                 yield (path, v)
         except Exception:
             if not ignore_finder_error:
