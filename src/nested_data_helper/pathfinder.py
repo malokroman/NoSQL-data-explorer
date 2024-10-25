@@ -1,3 +1,4 @@
+import re
 from typing import Any, Callable, Iterable
 
 from .navigation import navigate
@@ -266,13 +267,17 @@ def find_value(
     >>> list(find_value({'a', 'set', 'of', 'data'}, lambda x: True))
     Traceback (most recent call last):
     NotImplementedError: Iterable type <class 'set'> is not handled
+
+    >>> list(find_value(data, lambda x: 'world' in x.lower(), start_from='top_level.results.[].name'))
+    [('top_level.results.[0].name', 'World')]
     """
-    if start_from:
-        list_or_dict = navigate(list_or_dict, start_from)
-        _prefix += start_from + "."
-        # the [] will be added again for list, delete duplicate here
-        if _prefix.endswith("[]."):
-            _prefix = _prefix[:-3]
+    _prefix_depth = sum(1 for i in _prefix if i == '.')
+    start_from_checker = '.'.join(start_from.split('.')[:_prefix_depth])
+    pathcheck = re.compile(
+        rf'^{re.escape(start_from_checker)}'.replace(r'\[\]', r'\[\d+\]'),
+    )
+    if not pathcheck.search(_prefix):
+        return
 
     if isinstance(list_or_dict, list):
         iterable = ((f"[{i}]", item) for i, item in enumerate(list_or_dict))
