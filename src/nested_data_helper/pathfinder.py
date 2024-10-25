@@ -305,4 +305,5 @@ def find_value(
             v,
             value_finder,
             _prefix=f"{path}.",
+            start_from=start_from,
         )
