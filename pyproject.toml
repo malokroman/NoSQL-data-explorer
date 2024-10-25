@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "nested-data-helper"
-version = "1.0.1"
+version = "1.0.2"
 description = "Help you find the data nested deep in your data"
 readme = "README.md"
 authors = [{ name = "Roman Ma", email = "romanma0508@gmail.com" }]
