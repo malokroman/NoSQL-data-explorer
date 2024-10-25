@@ -3,9 +3,10 @@ Help you find the data nested deep in your data.
 
 ## Introduction
 
-I am a data engineer who works with data a lot. Whilst flat data might be straight forward to navigate, it is often not the case for nested data. Especially data from APIs, JSONs, or NoSQL Databases, the schema is not enforced by design and it requires discipline from the developer, which is not always guaranteed. Even if we are lucky to have access to the documentations, these documents might still be outdated or too big to understand. 
+As a data engineer who works with data a lot, I don't always have the luxury to work with simple or well documented data. Whilst flat data might be straight forward to navigate, it is often not the case for nested data. Especially data from APIs, JSONs, or NoSQL Databases, the schema is not enforced by design and there is no guarantee for data discipline. Even if we are lucky to have access to the documentations, these documents might still be outdated or too big to understand. Instead, I adopted a "data as its own documentation" approach as the data consumer.
 
-To efficiently understand and navigate nested data, I have been using the functions in this modules and decided to polish them and publish them for anyone to use. I have used them to understand the schema discipline, find the path to desired data, understand if there are missing data and etc. They may not be helpful in production but they surely are useful being used in REPL or Jupyter notebook. Use cases can be scraping, feature engineering, data mining, data cleansing, edge case finding and on and on. By using these function, you can speed up your data inspection iterations.
+To efficiently understand and navigate nested data, I have been using some functions I developed and decided to polish them and publish them for anyone to use. They are useful for understand the schema discipline, find the path to desired data, understand if there are missing data and etc. They may not be helpful in production but they surely are useful being used in REPL or Jupyter notebook. Use cases can be scraping, feature engineering, data mining, data cleansing, edge case finding and on and on. By using these function, you can speed up your data inspection iterations. See [Workflow for Nested Data](https://medium.com/@romanma0508/workflow-for-nested-data-a503a9e505e9) for a dive in with some real world data.
+
 
 This library consist of two parts:
 - navigation: syntactic sugar to help you navigate to the subpath of the complex data with the path syntax
@@ -31,11 +32,8 @@ You can install the library from PyPi using pip:
 pip install nested_data_helper
 ```
 
-### Examples
 
-For example using real data, see [Workflow for Nested Data](https://medium.com/@romanma0508/workflow-for-nested-data-a503a9e505e9).
-
-#### Navigation
+### Navigation
 
 You can get the values of the data without the clumsy chain of square brackets now.
 ``` python
@@ -70,7 +68,7 @@ navigate(data, "results.[0].synonyms.[].text")
 This is even more powerful combined with the paths returned from explore and will allow quick exploration of your data.
 
 
-#### Pathfinder
+### Pathfinder
 
 This helps you understand the data structure you are looking for by filtering out the noise. Combined with Counter, you can find the most common paths in the data, or simply understand if there are missing data. You can also find out the type discipline of the data through the explore functions.
 
